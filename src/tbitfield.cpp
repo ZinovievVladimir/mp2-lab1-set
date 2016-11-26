@@ -56,7 +56,7 @@ void TBitField::SetBit(const int n) // установить бит
 	if ((n > -1) && (n < BitLen))
 		pMem[GetMemIndex(n)] |= GetMemMask(n);
 	else
-		throw 1;
+		throw 2;
 }
 
 void TBitField::ClrBit(const int n) // очистить бит
