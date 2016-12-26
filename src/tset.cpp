@@ -6,6 +6,7 @@
 // Множество - реализация через битовые поля
 
 #include "tset.h"
+#include <stdexcept>
 
 TSet::TSet(int mp) : MaxPower(mp), BitField(mp)
 {
@@ -81,7 +82,7 @@ TSet TSet::operator+(const int Elem) // объединение с элемент
 		return temp;
 	}
 	else 
-		throw 1;
+    throw std::logic_error("too large element");
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
@@ -93,7 +94,7 @@ TSet TSet::operator-(const int Elem) // разность с элементом
 		return temp;
 	}
 	else 
-		throw 2;
+    throw std::logic_error("too large element");
 }
 
 TSet TSet::operator*(const TSet &s) // пересечение
